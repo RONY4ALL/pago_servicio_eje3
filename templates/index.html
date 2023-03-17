@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style/style.css">
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+			crossorigin="anonymous"
+		></script>
+		<title>Crud eje3</title>
+	</head>
+	<body style="background: rgb(2,0,36);
+	background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(32, 56, 24) 35%, rgb(7, 37, 43) 100%);">
+			<nav class="navbar pb-3" style="background: rgb(2,0,36);
+			background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(25, 35, 22) 35%, rgb(23, 38, 41) 100%);">
+				<div class="p-2">
+					
+					<img src="data:image/png;base64,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" alt="" srcset="" width="75px" height="75px">
+
+				</div>
+				<div class="p-2"><h1 style="color: white; ">Crud Pago de servicios Eje 3</h1></div>
+				<div style="height: 25%;"></div>
+				
+			</nav>
+		<h1 style="color: bisque;" class="p-3">Registro de pago de servicios</h1>
+		<form action="/add_venta" method="POST">
+			<select 				class="m-2"
+			name="id_servicio"
+			type="number"
+			placeholder="Servicio">
+				<option>Servicios</option>
+				<option value="1">Claro hogar</option>
+				<option value="2">Claro movil</option>
+				<option value="3">Tigo Hogar</option>
+				<option value="4">Tigo movil</option>
+				<option value="5">Movistar Hogar</option>
+				<option value="6">Movistar movil</option>
+				<option value="7">Luz</option>
+				<option value="8">Gaz</option>
+				<option value="9">Agua</option>
+			</select>
+			<select placeholder="Metodo de pago" type="number" name="id_met_pago">
+				<option>Metodo de pago</option>
+				<option value="1">Pay Pal</option>
+				<option value="2">PSE</option>
+				<option value="3">Tarjeta de credito</option>
+				<option value="4">Nequi</option>
+				<option value="5">Daviplata</option>
+				<option value="6">Tarjeta debito</option>
+				<option value="7">Efecty</option>
+				<option value="8">Baloto</option>
+			</select>
+			<input
+				class="m-2"
+				name="nom_cliente"
+				type="text"
+				placeholder="Cliente"
+			/>
+			<input
+				class="m-2"
+				name="documento"
+				type="number"
+				placeholder="Documento"
+			/>
+			<input
+				class="m-2"
+				name="valor_pagar"
+				type="number"
+				placeholder="Valor a pagar"
+			/>
+			<button class="btn btn-success" type="submit">Pagar factura</button>
+		</form>
+
+		<h2 style="color: bisque;" class="p-3">Pagos realizados</h2>
+		<table style="background-color: 
+		white;" class="table">
+			<thead>
+				<tr>
+					<th>Servicio</td>
+					<th>Metodo de pago</th>
+					<th>Cliente</th>
+					<th>Documento</th>
+					<th>Valor pagado</th>
+					<th>Fecha y Hora</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for pago in Pagos %}
+				<tr>
+					<td if>
+						{{pago.1}}
+					</td>
+					<td>
+						{{pago.2}}
+					</td>
+					<td>
+						{{pago.3}}
+					</td>
+					<td>
+						{{pago.4}}
+					</td>
+					<td>
+						{{pago.5}}
+					</td>
+					<td>
+						{{pago.6}}
+					</td>
+					<td>
+						<button class="btn btn-primary"><a style="color:white" href="/edit_ventas/{{pago.0}}">Editar</a></button>
+						<button class="btn btn-danger"><a style="color:white" href="/delete/{{pago.0}}">Eliminar</a></button>
+						
+						
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</body>
+</html>
